@@ -8,6 +8,12 @@ e.preventDefault();
 setTask([...task,todo]);
 setTodo("");
   }
+  function deleteTask(indexToDelete) {
+  const updatedTasks = [...task]; 
+  updatedTasks.splice(indexToDelete, 1); 
+  setTask(updatedTasks);
+  
+}
   return (
 
     <div>
@@ -16,11 +22,14 @@ setTodo("");
         <input type="text"
         value={todo}
         onChange={(e)=>setTodo(e.target.value)} />
-        <button type = "submit" >Create</button>
+        <button type = "submit" style={{background:"green",color:"white"}}>Create</button>
       </form>
  <ul>
   {task.map((name, index)=>(
-    <li key={index}>{name}</li>
+    <div style={{display:'flex'}}>
+    <li style={{listStyle:"none"}} key={index}>{name}</li>
+    <button style={{marginLeft:"1rem",background:"red",color:"white"}} onClick={() => deleteTask(index)}>delete</button>
+    </div>
   ))
 }
  </ul>
