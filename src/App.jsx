@@ -37,7 +37,7 @@ setUpdate(index);
 } 
   return (
 
-    <div>
+    <div >
       <h2>Todo Tasks : {todo}</h2>
       <form onSubmit={handleSubmit}>
         <input type="text"
@@ -45,9 +45,9 @@ setUpdate(index);
         onChange={(e)=>setTodo(e.target.value)} />
         <button type = "submit" style={{background:"green",color:"white"}}>Create</button>
       </form>
- <ul>
+ <ul >
   {task.map((name, index)=>(
-    <div style={{display:'flex'}}>
+    <div style={{display:"flex", alignItems:"center",justifyContent:"center"}}>
     <li style={{listStyle:"none"}} key={index}>{name}</li>
     <button style={{marginLeft:"1rem",background:"red",color:"white"}} onClick={() => deleteTask(index)}>delete</button>
     <button onClick={()=>updateTask(index)}>update</button>
