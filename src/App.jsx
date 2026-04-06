@@ -4,6 +4,7 @@ const App = () => {
   const[todo, setTodo]= useState("");  
   const[task,setTask]=useState([]);
   const[update,setUpdate]= useState(null);
+  const[completed,setCompleted]= useState([]);
 
   function handleSubmit(e){
 e.preventDefault();
@@ -35,6 +36,15 @@ function updateTask(index) {
 setTodo(task[index]);
 setUpdate(index);
 } 
+function completedTask(index){
+  const completedItem = task[index];  
+
+  setCompleted([...completed, completedItem]);
+
+  const updatedTasks = [...task];
+  updatedTasks.splice(index, 1);
+  setTask(updatedTasks);
+}
   return (
 
     <div >
@@ -51,9 +61,17 @@ setUpdate(index);
     <li style={{listStyle:"none"}} key={index}>{name}</li>
     <button style={{marginLeft:"1rem",background:"red",color:"white"}} onClick={() => deleteTask(index)}>delete</button>
     <button onClick={()=>updateTask(index)}>update</button>
+    <button onClick={()=>completedTask(index)}>completed</button>
     </div>
   ))
 }
+ </ul>
+ <ul>
+  {completed.map((name, index)=>(
+  
+      <li style={{listStyle:"none"}} key={index}>{name} </li>
+  
+  ))}
  </ul>
     </div>
   )
