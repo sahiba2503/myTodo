@@ -45,6 +45,11 @@ function completedTask(index){
   updatedTasks.splice(index, 1);
   setTask(updatedTasks);
 }
+function deleteCompletedTask(index){
+  let allcompletedTask = [...completed];
+  allcompletedTask.splice(index, 1);
+  setCompleted(allcompletedTask);
+}
   return (
 
     <div >
@@ -66,11 +71,14 @@ function completedTask(index){
   ))
 }
  </ul>
+ <h3>Completed Tasks</h3>
  <ul>
   {completed.map((name, index)=>(
-  
-      <li style={{listStyle:"none"}} key={index}>{name} </li>
-  
+     
+     <div style={{display:"flex", alignItems:"center",justifyContent:"center"}}>
+         <li style={{listStyle:"none"}} key={index}>{name} </li>
+          <button style={{marginLeft:"1rem",background:"red",color:"white"}} onClick={() => deleteCompletedTask(index)}>delete</button>
+  </div>
   ))}
  </ul>
     </div>
