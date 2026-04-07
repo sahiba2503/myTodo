@@ -50,6 +50,13 @@ function deleteCompletedTask(index){
   allcompletedTask.splice(index, 1);
   setCompleted(allcompletedTask);
 }
+function moveCompletedTask(index){
+  let doneTask = [...completed];
+  let addInNewTask = completed[index];
+  setTask([...task,addInNewTask]);
+  doneTask.splice(index,1);
+  setCompleted(doneTask);
+}
   return (
 
     <div >
@@ -78,6 +85,7 @@ function deleteCompletedTask(index){
      <div style={{display:"flex", alignItems:"center",justifyContent:"center"}}>
          <li style={{listStyle:"none"}} key={index}>{name} </li>
           <button style={{marginLeft:"1rem",background:"red",color:"white"}} onClick={() => deleteCompletedTask(index)}>delete</button>
+          <button style={{marginLeft:"1rem",background:"yellow",color:"white"}} onClick={() => moveCompletedTask(index)}>moveBack</button>
   </div>
   ))}
  </ul>
