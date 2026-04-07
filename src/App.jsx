@@ -59,10 +59,11 @@ function moveCompletedTask(index){
 }
   return (
 
-    <div >
+    <div style={{border:"2px solid black",background:"gray",margin:"10%"}} >
       <h2>Todo Tasks : {todo}</h2>
       <form onSubmit={handleSubmit}>
         <input type="text"
+        placeholder='Enter your task'
         value={todo}
         onChange={(e)=>setTodo(e.target.value)} />
         <button type = "submit" style={{background:"green",color:"white"}}>Create</button>
@@ -78,7 +79,7 @@ function moveCompletedTask(index){
   ))
 }
  </ul>
- <h3>Completed Tasks</h3>
+ <h3  style={{color:"black"}} >Completed Tasks</h3>
  <ul>
   {completed.map((name, index)=>(
      
