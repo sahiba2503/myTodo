@@ -57,6 +57,7 @@ function moveCompletedTask(index){
   doneTask.splice(index,1);
   setCompleted(doneTask);
 }
+
   return (
 
     <div style={{border:"2px solid black",background:"gray",margin:"10%"}} >
@@ -65,8 +66,8 @@ function moveCompletedTask(index){
         <input type="text"
         placeholder='Enter your task'
         value={todo}
-        onChange={(e)=>setTodo(e.target.value)} />
-        <button type = "submit" style={{background:"green",color:"white"}}>Create</button>
+        onChange={(e)=>setTodo(e.target.value)} style={{background:"white",border:"none",height:"2rem",marginRight:"1rem",width:"50%"}} />
+        <button type = "submit" style={{background:"green",color:"white",marginLeft:"1rem" ,borderRadius:"15%",height:"2rem",width:"10%"}}>Create</button>
       </form>
  <ul >
   {task.map((name, index)=>(
