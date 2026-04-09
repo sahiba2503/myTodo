@@ -1,11 +1,17 @@
 
 import Hello from './assets/Hello';
-import { useState } from 'react'  
+import { useEffect, useState } from 'react'  
 const App = () => {
   const[todo, setTodo]= useState("");  
   const[task,setTask]=useState([]);
   const[update,setUpdate]= useState(null);
   const[completed,setCompleted]= useState([]);
+  
+ useEffect(() => {
+   let nm = prompt("enter your name");
+   console.log(nm);
+  
+  }, []);
 
   function handleSubmit(e){
 e.preventDefault();
@@ -93,7 +99,7 @@ function moveCompletedTask(index){
   ))}
  </ul>
     </div>
-    <Hello name="sahiba" />
+       <Hello name="sahiba"  />
     </div>
   )
 }
