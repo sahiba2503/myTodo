@@ -1,4 +1,5 @@
 
+import Hello from './assets/Hello';
 import { useState } from 'react'  
 const App = () => {
   const[todo, setTodo]= useState("");  
@@ -59,7 +60,7 @@ function moveCompletedTask(index){
 }
 
   return (
-
+   <div>
     <div style={{border:"2px solid black",background:"gray",margin:"10%"}} >
       <h2>Todo Tasks : {todo}</h2>
       <form onSubmit={handleSubmit}>
@@ -91,6 +92,8 @@ function moveCompletedTask(index){
   </div>
   ))}
  </ul>
+    </div>
+    <Hello name="sahiba" />
     </div>
   )
 }
