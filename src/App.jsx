@@ -73,13 +73,13 @@ function moveCompletedTask(index){
         <input type="text"
         placeholder='Enter your task'
         value={todo}
-        onChange={(e)=>setTodo(e.target.value)} style={{background:"white",border:"none",height:"2rem",marginRight:"1rem",width:"50%"}} />
-        <button type = "submit" style={{background:"green",color:"white",marginLeft:"1rem" ,borderRadius:"15%",height:"2rem",width:"10%"}}>Create</button>
+        onChange={(e)=>setTodo(e.target.value)} style={{border:"none",height:"2rem",marginRight:"1rem",width:"50%",paddingLeft:"1rem"}} />
+        <button type = "submit" style={{background:"green",color:"white",marginLeft:"1rem" ,borderRadius:"15%",height:"2rem",width:"10%",boxSizing:"border-box",fontSize:"0.6rem"}}>Create</button>
       </form>
  <ul >
   {task.map((name, index)=>(
     <div style={{display:"flex", alignItems:"center",justifyContent:"center"}}>
-    <li style={{listStyle:"none"}} key={index}>{name}</li>
+    <li style={{listStyle:"none",color:"black"}} key={index}>{name}</li>
     <button style={{marginLeft:"1rem",background:"red",color:"white"}} onClick={() => deleteTask(index)}>delete</button>
     <button onClick={()=>updateTask(index)}>update</button>
     <button onClick={()=>completedTask(index)}>completed</button>
@@ -94,7 +94,7 @@ function moveCompletedTask(index){
      <div style={{display:"flex", alignItems:"center",justifyContent:"center"}}>
          <li style={{listStyle:"none"}} key={index}>{name} </li>
           <button style={{marginLeft:"1rem",background:"red",color:"white"}} onClick={() => deleteCompletedTask(index)}>delete</button>
-          <button style={{marginLeft:"1rem",background:"yellow",color:"white"}} onClick={() => moveCompletedTask(index)}>moveBack</button>
+          <button style={{marginLeft:"1rem",background:"yellow",color:"black"}} onClick={() => moveCompletedTask(index)}>moveBack</button>
   </div>
   ))}
  </ul>
